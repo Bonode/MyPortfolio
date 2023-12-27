@@ -1,0 +1,266 @@
+/* css variables */
+
+:root {
+  --primary-color: rgb(2, 90, 78);
+  --secondary-color: rgb(76, 103, 99);
+  --bg-color: rgb(237, 231, 222);
+  --body-font: "AxalpGrotesk";
+  --heading-font-bold: "Acorn-bold";
+  --heading-font-regular: "Acorn-Regular";
+  --h1-size: 94px;
+  --h2-size: 50px;
+  --h3-size: 40px;
+  --h4-size: 32px;
+  --h5-size: 28px;
+  --h6-size: 22px;
+}
+
+@font-face {
+  font-family: "AxalpGrotesk";
+  src: url(fonts/AxalpGrotesk-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-bold";
+  src: url(fonts/Acorn-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-ExtraLight";
+  src: url(fonts/Acorn-ExtraLight.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-Light";
+  src: url(fonts/Acorn-Light.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-Medium";
+  src: url(fonts/Acorn-Medium.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-Regular";
+  src: url(fonts/Acorn-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-SemiBold";
+  src: url(fonts/Acorn-SemiBold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-Thin";
+  src: url(fonts/Acorn-Thin.otf) format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--body-font);
+  color: var(--secondary-color);
+}
+
+/* top-nav */
+
+.top-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 40px auto;
+  font-family: var(--heading-font-regular);
+  font-size: var(--h6-size);
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.top-nav ul {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.top-nav li {
+  display: inline-block;
+}
+
+.top-nav a {
+  margin: 20px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  letter-spacing: 0.8px;
+}
+
+.top-nav ul li a.active {
+  background-color: hsla(0, 0%, 100%, 0.5);
+  padding: 12px 24px;
+  border-radius: 20px;
+}
+
+/* styling hero section */
+
+.hero .left {
+  width: 40%;
+  margin: 200px 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  display: inline-block;
+}
+
+.hero .right {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+  top: 200px;
+  border-radius: 50%;
+  left: -50px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.hero .right img {
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.hero .images img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+h1 {
+  font-size: var(--h1-size);
+  color: var(--primary-color);
+  font-family: var(--heading-font-bold);
+}
+
+.left .contact {
+  font-size: var(--h6-size);
+  width: 50%;
+  margin: 20px 0 50px 0;
+}
+
+div.images {
+  display: flex;
+  height: 200px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 60%;
+  margin-left: 0px;
+}
+
+.images div {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.images div span {
+  margin-left: 15px;
+}
+
+/* styling form */
+.contact-form h2 {
+  font-size: var(--h3-size);
+}
+
+div.contact-form {
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+div.contact-form .left form {
+  width: 100%;
+}
+
+.contact-form .left {
+  margin: 100px 0 0 250px;
+  width: 40%;
+  display: inline-block;
+}
+
+.left form input {
+  display: block;
+  border-radius: 8px;
+  height: 45px;
+  border: 1px solid gray;
+  width: 80%;
+}
+
+.left form label {
+  margin: 15px 0;
+  display: inline-block;
+  font-size: var(--h6-size);
+}
+
+.contact-form .right {
+  width: 30%;
+  top: -190px;
+  left: -50px;
+  display: inline-block;
+  position: relative;
+}
+
+.right form {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.right label {
+  margin: 15px 0;
+  display: block;
+  font-size: var(--h6-size);
+}
+
+.right textarea {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.right form button {
+  position: relative;
+  left: 330px;
+  margin: 20px 0;
+  padding: 12px 24px;
+  font-size: 17px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* styling my footer */
+
+footer {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 50px;
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  font-size: 17px;
+}

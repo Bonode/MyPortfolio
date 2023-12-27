@@ -1,0 +1,374 @@
+/* css variables */
+
+:root {
+  --primary-color: rgb(2, 90, 78);
+  --secondary-color: rgb(76, 103, 99);
+  --bg-color: rgb(237, 231, 222);
+  --body-font: "AxalpGrotesk";
+  --heading-font-bold: "Acorn-bold";
+  --heading-font-regular: "Acorn-Regular";
+  --h1-size: 94px;
+  --h2-size: 50px;
+  --h3-size: 40px;
+  --h4-size: 32px;
+  --h5-size: 28px;
+  --h6-size: 22px;
+}
+
+@font-face {
+  font-family: "AxalpGrotesk";
+  src: url(fonts/AxalpGrotesk-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-bold";
+  src: url(fonts/Acorn-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-ExtraLight";
+  src: url(fonts/Acorn-ExtraLight.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-Light";
+  src: url(fonts/Acorn-Light.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-Medium";
+  src: url(fonts/Acorn-Medium.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-Regular";
+  src: url(fonts/Acorn-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-SemiBold";
+  src: url(fonts/Acorn-SemiBold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Acorn-Thin";
+  src: url(fonts/Acorn-Thin.otf) format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--body-font);
+  color: var(--secondary-color);
+}
+
+/* top-nav */
+
+.top-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 40px auto;
+  font-family: var(--heading-font-regular);
+  font-size: var(--h6-size);
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.top-nav ul {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.top-nav li {
+  display: inline-block;
+}
+
+.top-nav a {
+  margin: 20px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  letter-spacing: 0.8px;
+}
+
+.top-nav ul li a.active {
+  background-color: hsla(0, 0%, 100%, 0.5);
+  padding: 12px 24px;
+  border-radius: 20px;
+}
+
+/* main */
+
+h1 .intro {
+  display: block;
+}
+
+h1 {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--heading-font-bold);
+  color: var(--primary-color);
+  font-size: var(--h1-size);
+  margin-bottom: 50px;
+}
+
+.about-me {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: var(--h6-size);
+  letter-spacing: 1px;
+}
+
+/* random-facts styles */
+
+.random-facts h2 {
+  margin-top: 200px;
+  text-align: center;
+  letter-spacing: 10px;
+  margin-bottom: 50px;
+}
+
+.card-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.card-wrapper .cards {
+  display: inline-block;
+  height: 550px;
+  margin: 20px;
+  position: relative;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.card-wrapper .cards:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.card-wrapper .cards:nth-child(2),
+.card-wrapper .cards:nth-child(3),
+.card-wrapper .cards:nth-child(6) {
+  width: 52%;
+  background-color: hsla(172, 45%, 75%, 1);
+}
+
+.card-wrapper .cards:nth-child(1),
+.card-wrapper .cards:nth-child(4),
+.card-wrapper .cards:nth-child(5) {
+  width: 40%;
+  background-color: hsla(284, 61%, 74%, 1);
+}
+
+.cards img {
+  position: absolute;
+  height: 70%;
+  width: 100%;
+  bottom: 0;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  object-fit: cover;
+}
+
+.cards .caption {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  color: black;
+  text-align: justify;
+  margin-top: 5px;
+  width: 90%;
+  padding: 20px 20px 0 20px;
+  box-sizing: border-box;
+  opacity: 0.8;
+  font-size: var(--h6-size);
+}
+
+.title {
+  position: absolute;
+  font-size: var(--h3-size);
+  top: 20px;
+  right: 20px;
+  font-family: var(--heading-font-regular);
+  color: black;
+  opacity: 0.5;
+}
+
+/* media queries - making my portfolio responsive */
+
+@media only screen and (max-width: 1200px) {
+  .card-wrapper .cards:nth-child(1),
+  .card-wrapper .cards:nth-child(4),
+  .card-wrapper .cards:nth-child(5) {
+    width: 40%;
+  }
+
+  .card-wrapper .cards:nth-child(2),
+  .card-wrapper .cards:nth-child(3),
+  .card-wrapper .cards:nth-child(6) {
+    width: 50%;
+  }
+
+  .card-wrapper .cards {
+    height: 400px;
+  }
+
+  .title {
+    font-size: var(--h4-size);
+    top: 10px;
+  }
+
+  .cards .caption {
+    font-size: 18px;
+    margin-top: 0;
+    padding: 0 20px;
+  }
+
+  .top-nav a {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  p.about-me {
+    font-size: 18px;
+  }
+
+  .random-facts h2 {
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 945px) {
+  .card-wrapper .cards:nth-child(1),
+  .card-wrapper .cards:nth-child(4),
+  .card-wrapper .cards:nth-child(5) {
+    width: 40%;
+  }
+
+  .card-wrapper .cards:nth-child(2),
+  .card-wrapper .cards:nth-child(3),
+  .card-wrapper .cards:nth-child(6) {
+    width: 49%;
+  }
+
+  .cards .caption {
+    font-size: 16px;
+    padding-left: 30px;
+    padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .card-wrapper .cards:nth-child(1),
+  .card-wrapper .cards:nth-child(3),
+  .card-wrapper .cards:nth-child(5) {
+    width: 100%;
+    background-color: hsla(284, 61%, 74%, 1);
+  }
+
+  .card-wrapper .cards:nth-child(2),
+  .card-wrapper .cards:nth-child(4),
+  .card-wrapper .cards:nth-child(6) {
+    width: 100%;
+    background-color: hsla(172, 45%, 75%, 1);
+  }
+
+  .cards .caption {
+    font-size: 20px;
+    padding: 8px 0 0 0;
+  }
+
+  .card-wrapper {
+    margin-left: 15px;
+    width: 90.8%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .cards .caption {
+    font-size: 18px;
+    padding: 0;
+    width: 85%;
+    text-align: center;
+  }
+
+  .card-wrapper {
+    margin: 0;
+  }
+
+  .top-nav a {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  p.about-me {
+    font-size: 16px;
+  }
+
+  .random-facts h2 {
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .cards .caption {
+    text-align: justify;
+    font-size: 14px;
+    padding-left: 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p.about-me {
+    width: 100%;
+  }
+
+  .top-nav a {
+    margin: 10px;
+    font-size: 13px;
+  }
+
+  .random-facts h2 {
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin-top: 80px;
+  }
+}
+
+/* footer styles */
+
+footer {
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 50px;
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  font-size: 17px;
+}
